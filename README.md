@@ -1,24 +1,40 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column               | Type     | Options     |
+| ----------           | ------   | ----------- |
+| nickname             | string   | null: false |
+| email                | string   | null: false |
+| encrypted_password   | string   | null: false |
+| first_name           | string   | null: false |
+| last_name            | string   | null: false |
+| first_name_kana      | string   | null: false |
+| last_name_kana       | string   | null: false |
+| birthday             | integer  | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :products
 
-* Configuration
+## products table
 
-* Database creation
+| Column           | Type        | Options                        |
+| ----------       | ----------  | -----------                    |
+| user             | references  | null: false,foreign_key: true  |
+| name             | string      | null: false                    |
+| description      | text        |                                |
+| category         | references  | null: false,foreign_key: true  |
+| condition        | references  | null: false, foreign_key: true |
+| size             | references  | null: false, foreign_key: true |
+| brand            | string                                       |
+| delivery_charge  | references  | null: false, foreign_key: true |
+| delivery_way     | references  | null: false, foreign_key: true |
+| delivery_charge  | references  | null: false, foreign_key: true |
+| prefecture       | references  | null: false, foreign_key: true |
+| status           | references  | null: false, foreign_key: true |
+| price            | references  | null: false |
 
-* Database initialization
+### Association
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belongs_to :user
