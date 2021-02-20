@@ -50,3 +50,15 @@
 
 has_many :products
 has_many :user
+
+## shipping_address table
+
+| Column       | Type        | Options                        |
+| ----------   | ----------  | -----------                    |
+| user_id      | references  | null: false,foreign_key: true  |
+| products_id  | references  | null: false,foreign_key: true  |
+
+### Association
+
+has_many :products
+has_many :user
