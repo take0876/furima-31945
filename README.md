@@ -16,6 +16,9 @@
 ### Association
 
 - has_many :products
+- has_many :purchase_history
+- has_many :shipping_address
+
 
 ## products table
 
@@ -23,17 +26,16 @@
 | ----------       | ----------  | -----------                    |
 | user             | references  | null: false,foreign_key: true  |
 | name             | string      | null: false                    |
-| description      | text        |                                |
+| price            | references  | null: false                    |
+| description      | text        | null: false                    |
+| seller           | references  | null: false                    |
 | category         | references  | null: false,foreign_key: true  |
 | condition        | references  | null: false, foreign_key: true |
-| size             | references  | null: false, foreign_key: true |
-| brand            | string                                       |
-| delivery_charge  | references  | null: false, foreign_key: true |
-| delivery_way     | references  | null: false, foreign_key: true |
+
 | delivery_charge  | references  | null: false, foreign_key: true |
 | prefecture       | references  | null: false, foreign_key: true |
-| status           | references  | null: false, foreign_key: true |
-| price            | references  | null: false |
+| delivery_way     | references  | null: false, foreign_key: true |
+
 
 ### Association
 
