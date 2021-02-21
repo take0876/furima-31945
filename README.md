@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :user
-- has_many :addresses
+- has_one :addresses
 - has_one :purchase_history
 
 ## purchase_histories table
@@ -55,15 +55,15 @@
 
 ## addresses table
 
-| Column          | Type     | Options                              |
-| ----------      | ---------| -----------                          |
-| postal_code     | string   | null: false                          |
-| prefecture_id   | integer  | null: false,foreign_key: true        |
-| city            | string   | null: false                          |
-| block_number    | string   | null: false                          |
-| building_name   | string   | null: false                          |
-| phone_number    | string   | null: false                          |
-| purchase_history_id | references  | null: false,foreign_key: true |
+| Column              | Type        | Options                              |
+| ----------          | ---------   | -----------                          |
+| postal_code         | string      | null: false                          |
+| prefecture_id       | integer     | null: false,foreign_key: true        |
+| city                | string      | null: false                          |
+| block_number        | string      | null: false                          |
+| building_name       | string      | null: false                          |
+| phone_number        | string      | null: false                          |
+| purchase_history_id | references  | null: false,foreign_key: true        |
 
 ### Association
 
