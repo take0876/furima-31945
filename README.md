@@ -21,23 +21,22 @@
 
 ## products table
 
-| Column              | Type        | Options                           |
-| ----------          | ----------  | -----------                       |
-| user                | references  | null: false,foreign_key: true     |
-| name                | string      | null: false                       |
-| price               | integer     | null: false                       |
-| description         | text        | null: false                       |
-| category_id         | integer     | null: false,foreign_key: true     |
-| condition_id        | integer     | null: false, foreign_key: true    |
-| delivery_charge_id  | integer     | null: false, foreign_key: true    |
-| prefecture_id       | integer     | null: false, foreign_key: true    |
-| delivery_way_id     | integer     | null: false, foreign_key: true    |
+| Column              | Type        | Options                         |
+| ----------          | ----------  | -----------                     |
+| user                | references  | null: false,foreign_key: true   |
+| name                | string      | null: false                     |
+| price               | integer     | null: false                     |
+| description         | text        | null: false                     |
+| category_id         | integer     | null: false                     |
+| condition_id        | integer     | null: false                     |
+| delivery_charge_id  | integer     | null: false                     |
+| prefecture_id       | integer     | null: false                     |
+| delivery_way_id     | integer     | null: false                     |
 
 
 ### Association
 
 - belongs_to :user
-- has_one :addresses
 - has_one :purchase_history
 
 ## purchase_histories table
@@ -63,7 +62,7 @@
 | block_number        | string      | null: false                          |
 | building_name       | string      | null: false                          |
 | phone_number        | string      | null: false                          |
-| purchase_history_id | references  | null: false,foreign_key: true        |
+| purchase_history | references  | null: false,foreign_key: true           |
 
 ### Association
 
